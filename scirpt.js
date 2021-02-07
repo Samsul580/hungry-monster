@@ -7,7 +7,6 @@ inputBtn.addEventListener("click", () => {
         .then(data => displayMeals(data.meals))
         .catch(err => alert("Could not find this food!"))
     const displayMeals = meals => {
-        console.log(meals)
         const mealsArea = document.getElementById("meals-area");
         meals.forEach(meal => {
             const mealBox = document.createElement("div");
@@ -20,7 +19,6 @@ inputBtn.addEventListener("click", () => {
             `;
             mealBox.innerHTML = mealInfo;
             mealsArea.appendChild(mealBox);
-            console.log(meal.strMeal);
         });
     }
 })
