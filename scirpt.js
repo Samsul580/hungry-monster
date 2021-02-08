@@ -8,6 +8,7 @@ inputBtn.addEventListener("click", () => {
         .catch(err => alert("Could not find this food!"))
     const displayMeals = meals => {
         const mealsArea = document.getElementById("meals-area");
+        mealsArea.innerHTML = '';
         meals.forEach(meal => {
             const mealBox = document.createElement("div");
             mealBox.className = "meal-box";
@@ -29,6 +30,7 @@ const displayMealDetail = id => {
     fetch(url)
         .then(res => res.json())
         .then(data => renderMealInfo(data.meals[0]))
+        .catch(err => alert("Could not find this food details!"))
 }
 
 // renderMealInfo function 
